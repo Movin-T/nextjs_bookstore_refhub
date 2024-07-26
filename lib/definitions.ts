@@ -6,7 +6,7 @@ export enum Category {
     SelfHelp = "Self Help"
 }
 
-export interface Books {
+export interface Book {
     isbn: string; // Unique identifier
     title: string;
     author: string;

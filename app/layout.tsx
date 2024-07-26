@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
+import '@mantine/core/styles.css';
+import { ColorSchemeScript, Combobox, MantineProvider } from '@mantine/core';
+import Header from '@/components/Header/Header';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +21,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+      <html lang="en">
+        <head>
+          <ColorSchemeScript />
+        </head>
+        <body>
+        <MantineProvider>
+            <div className="gradient"/>
+            <div className={`h-screen overflow-hidden`}>
+                <Header/>
+                <div className={`main overflow-auto`}>
+                    {children}
+                </div>
+            </div>
+        </MantineProvider>
+        </body>
+      </html>
   );
 }

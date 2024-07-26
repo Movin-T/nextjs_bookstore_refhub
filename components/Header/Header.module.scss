@@ -1,0 +1,24 @@
+.header {
+  height: var(--header-height);
+  background-color: var(--mantine-color-body);
+  border-bottom: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  padding-left: var(--mantine-spacing-md);
+  padding-right: var(--mantine-spacing-md);
+  display: flex;
+  align-items: center;
+
+  .inner {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+
+    .search {
+      flex-grow: 1;
+      margin: auto;
+    }
+  }
+}
+
+
