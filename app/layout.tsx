@@ -4,6 +4,7 @@ import "./globals.scss";
 import '@mantine/core/styles.css';
 import { ColorSchemeScript, Combobox, MantineProvider } from '@mantine/core';
 import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,10 +29,11 @@ export default function RootLayout({
         <body>
         <MantineProvider>
             <div className="gradient"/>
-            <div className={`h-screen overflow-hidden`}>
+            <div className={`h-screen`}>
                 <Header/>
                 <div className={`main overflow-auto`}>
                     {children}
+                    <Footer />
                 </div>
             </div>
         </MantineProvider>

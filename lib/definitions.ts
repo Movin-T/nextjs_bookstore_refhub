@@ -1,5 +1,14 @@
 // Contains interface definitions for the data.
 
+export enum SortBy {
+    TitleAsc = "Title (A-Z)",
+    TitleDesc = "Title (Z-A)",
+    AuthorAsc = "Author (A-Z)",
+    AuthorDesc = "Author (Z-A)",
+    PriceAsc = "Price (Low to High)",
+    PriceDesc = "Price (High to Low)"
+}
+
 export enum Category {
     BusinessAndMoney = "Business & Money",
     PositivityAndLifeHacks = "Positivity & Life Hacks",
