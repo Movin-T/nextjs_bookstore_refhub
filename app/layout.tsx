@@ -32,8 +32,10 @@ export default function RootLayout({
             <div className={`h-screen`}>
                 <Header/>
                 <div className={`main overflow-auto`}>
-                    {children}
-                    <Footer />
+                    <div className={`min-h-[100%]`}>
+                        {children}
+                    </div>
+                    <Footer/>
                 </div>
             </div>
         </MantineProvider>

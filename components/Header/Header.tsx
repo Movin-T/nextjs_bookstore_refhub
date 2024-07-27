@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import Link from 'next/link';
 
 import { Input, UnstyledButton } from '@mantine/core';
 import { IconSearch, IconShoppingCart } from '@tabler/icons-react';
@@ -25,6 +24,10 @@ const Header = () => {
         }
         replace(`?${params.toString()}`);
     }
+
+    useEffect(() => {
+        setSearchValue(searchParams.get('query')?.toString() || '');
+    }, [searchParams]);
 
     return (
         <header className={classes.header}>
