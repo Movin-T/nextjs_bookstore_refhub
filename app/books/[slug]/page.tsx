@@ -37,7 +37,7 @@ const Page = ({ params }: { params: { slug: string }}) => {
                     }} href={`/?query=${book.author}`}>{book.author}</Anchor>
                     <p className={`text-lg font-semibold mt-2`}>{convertCentsToRupees(book.price)}</p>
                     <div className={`text-lg mt-5`} dangerouslySetInnerHTML={{ __html: book.summary.replace(/\n/g, '<br />') }}></div>
-                    <AddToCartWithQty stock={book.quantityInStock} isbn={book.isbn} />
+                    <AddToCartWithQty stock={book.quantityInStock} book={book} />
                 </div>
             </div>
             <Divider className={`my-5`} />

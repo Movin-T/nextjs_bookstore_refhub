@@ -28,3 +28,19 @@ export interface Book {
     category: Category;
     slug: string;
 }
+
+export interface CartItem {
+    isbn: string;
+    title: string;
+    price: number;
+    imageUrl: string;
+    quantity: number;
+}
+
+export interface CartState {
+    items: CartItem[];
+    addItem: (item: CartItem) => void;
+    removeItem: (isbn: string) => void;
+    updateQuantity: (isbn: string, quantity: number) => void;
+    clearCart: () => void;
+}
