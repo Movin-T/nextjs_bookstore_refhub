@@ -26,4 +26,5 @@ export interface Book {
     price: number;  // Store price in cents
     quantityInStock: number;
     category: Category;
+    slug: string;
 }

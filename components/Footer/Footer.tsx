@@ -7,7 +7,7 @@ import classes from './Footer.module.scss';
 const Footer = () =>  {
     return (
         <div className={classes.footer}>
-            <Container className={classes.inner}>
+            <Container size={"xl"} className={classes.inner}>
                 <Logo />
                 <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
                     <ActionIcon size="lg" color="gray" variant="subtle">

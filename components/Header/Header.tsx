@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 
-import { Input, UnstyledButton } from '@mantine/core';
+import { Container, Input, Pill, UnstyledButton } from '@mantine/core';
 import { IconSearch, IconShoppingCart } from '@tabler/icons-react';
 
 import classes from './Header.module.scss'
@@ -25,17 +25,24 @@ const Header = () => {
         replace(`?${params.toString()}`);
     }
 
+    const clearSearch = () => {
+        setSearchValue('');
+        const params = new URLSearchParams(searchParams);
+        params.delete('query');
+        replace(`?${params.toString()}`);
+    }
+
     useEffect(() => {
         setSearchValue(searchParams.get('query')?.toString() || '');
     }, [searchParams]);
 
     return (
         <header className={classes.header}>
-            <div className={classes.inner}>
+            <Container size={"xl"} className={classes.inner}>
                 <Logo />
 
                 {/* Search Bar*/}
-                <div className={`flex align-middle flex-grow`}>
+                <div className={`flex align-middle flex-grow relative`}>
                     <Input type="text"
                            placeholder="Search by Title, Author"
                            className={`flex-grow`}
@@ -47,15 +54,21 @@ const Header = () => {
                                }
                            }}
                     />
+                    {searchValue &&
+                        <button
+                            className={`absolute right-10 top-[50%] -translate-y-1/2 bg-gray-400 flex align-middle justify-center text-white text-xs h-[16px] w-[16px] rounded-full`}
+                            onClick={clearSearch}>
+                            &#x2715;
+                        </button>}
                     <UnstyledButton className={`ml-2`} variant="light" onClick={handleSearch}><IconSearch /></UnstyledButton>
                 </div>
 
                 {/* Cart Icon*/}
-                <div className={`flex align-middle h-[32px] cursor-pointer relative`}>
-                    <IconShoppingCart size={32} />
-                    <span className={`text-white bg-black font-bold w-[25px] h-[25px] rounded-full flex align-middle justify-center absolute top-[-10px] right-[-10px]`}>2</span>
+                <div className={`flex align-middle cursor-pointer relative`}>
+                    <IconShoppingCart size={24} />
+                    <span className={`text-white bg-black font-bold text-xs w-[16px] h-[16px] rounded-full flex align-middle justify-center absolute top-[-10px] right-[-10px]`}>2</span>
                 </div>
-            </div>
+            </Container>
         </header>
     );
 }

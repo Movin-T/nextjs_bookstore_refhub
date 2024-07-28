@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import '@mantine/core/styles.css';
-import { ColorSchemeScript, Combobox, MantineProvider } from '@mantine/core';
+import { ColorSchemeScript, Combobox, Container, MantineProvider } from '@mantine/core';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 
@@ -32,9 +32,9 @@ export default function RootLayout({
             <div className={`h-screen`}>
                 <Header/>
                 <div className={`main overflow-auto`}>
-                    <div className={`min-h-[100%]`}>
+                    <Container size={"xl"} className={`min-h-[100%]`}>
                         {children}
-                    </div>
+                    </Container>
                     <Footer/>
                 </div>
             </div>

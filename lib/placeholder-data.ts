@@ -15,7 +15,8 @@ export const books: Book[] = [
         imageUrl: 'https://m.media-amazon.com/images/I/71MOtOP8uJL._SL1500_.jpg',
         price: 199000, // Store price in cents
         quantityInStock: 4,
-        category: Category.BusinessAndMoney
+        category: Category.BusinessAndMoney,
+        slug: 'the-psychology-of-money'
     },
     {
         isbn: '978-0062312686',
@@ -29,7 +30,8 @@ export const books: Book[] = [
         imageUrl: 'https://m.media-amazon.com/images/I/91L0La1pwDL._SL1500_.jpg',
         price: 399000, // Store price in cents
         quantityInStock: 3,
-        category: Category.BusinessAndMoney
+        category: Category.BusinessAndMoney,
+        slug: 'the-intelligent-investor'
     },
     {
         isbn: '978-0091929114',
@@ -43,7 +45,8 @@ export const books: Book[] = [
         imageUrl: 'https://m.media-amazon.com/images/I/41v0w9BFN5L.jpg',
         price: 449000, // Store price in cents
         quantityInStock: 4,
-        category: Category.BusinessAndMoney
+        category: Category.BusinessAndMoney,
+        slug: 'the-4-hour-workweek'
     },
     {
         isbn: '978-1847941831',
@@ -59,7 +62,8 @@ export const books: Book[] = [
         imageUrl: 'https://m.media-amazon.com/images/I/41vcjE5lIgL.jpg',
         price: 449000, // Store price in cents
         quantityInStock: 5,
-        category: Category.PositivityAndLifeHacks
+        category: Category.PositivityAndLifeHacks,
+        slug: 'atomic-habits'
     },
     {
         isbn: '978-0374533557',
@@ -78,7 +82,8 @@ export const books: Book[] = [
         imageUrl: 'https://m.media-amazon.com/images/I/41ZYHgBlOsL.jpg',
         price: 399000, // Store price in cents
         quantityInStock: 2,
-        category: Category.PositivityAndLifeHacks
+        category: Category.PositivityAndLifeHacks,
+        slug: 'thinking-fast-and-slow'
     },
     {
         isbn: '978-0349420219',
@@ -92,7 +97,8 @@ export const books: Book[] = [
         imageUrl: 'https://m.media-amazon.com/images/I/71vvE5Pkt5L._SL1500_.jpg',
         price: 249000, // Store price in cents
         quantityInStock: 0,
-        category: Category.PositivityAndLifeHacks
+        category: Category.PositivityAndLifeHacks,
+        slug: 'so-good-they-cant-ignore-you'
     },
     {
         isbn: '978-0008602949',
@@ -108,7 +114,8 @@ export const books: Book[] = [
         imageUrl: 'https://m.media-amazon.com/images/I/71EW1ClrIdL._SL1500_.jpg',
         price: 249000, // Store price in cents
         quantityInStock: 3,
-        category: Category.SelfHelp
+        category: Category.SelfHelp,
+        slug: '8-rules-of-love'
     },
     {
         isbn: '978-8172234980',
@@ -122,7 +129,8 @@ export const books: Book[] = [
         imageUrl: 'https://m.media-amazon.com/images/I/81FPzmB5fgL._SL1500_.jpg',
         price: 199000, // Store price in cents
         quantityInStock: 1,
-        category: Category.SelfHelp
+        category: Category.SelfHelp,
+        slug: 'the-alchemist'
     },
     {
         isbn: '978-0008386597',
@@ -138,6 +146,7 @@ export const books: Book[] = [
         imageUrl: 'https://m.media-amazon.com/images/I/81MvwM80YHL._SL1500_.jpg',
         price: 269000, // Store price in cents
         quantityInStock: 2,
-        category: Category.SelfHelp
+        category: Category.SelfHelp,
+        slug: 'think-like-a-monk'
     }
 ];

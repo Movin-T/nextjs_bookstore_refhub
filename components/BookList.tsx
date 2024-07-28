@@ -29,7 +29,7 @@ const BookList = ({ query, sort }: { query: string, sort: SortBy }) => {
   }
 
   return (
-    <div className={`p-3 grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-3`}>
+    <div className={`p-3 grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-3`}>
         {queryFilteredBooks.sort(sortBook).map((book) => (
             <BookCard key={book.isbn} book={book} />
         ))}

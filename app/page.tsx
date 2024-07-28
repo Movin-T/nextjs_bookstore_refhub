@@ -18,7 +18,7 @@ export default function Home({
   const [sort, setSort] = useState(sortOptions[0]);
 
   return (
-    <main className={`p-5 overflow-auto`}>
+    <main className={`py-5`}>
         {/* Sort Dropdown*/}
         <div className={`flex justify-end`}>
             <NativeSelect label="Sort by" data={sortOptions} value={sort} onChange={(e) => setSort(e.target.value as SortBy)} />
