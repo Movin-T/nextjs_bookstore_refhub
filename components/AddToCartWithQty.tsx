@@ -33,7 +33,8 @@ const AddToCartWithQty = ({ stock, book }: { stock: number, book: Book }) => {
             title: book.title,
             price: book.price,
             quantity: qty,
-            imageUrl: book.imageUrl
+            imageUrl: book.imageUrl,
+            slug: book.slug
         });
 
         qtyInCart += qty;

@@ -17,7 +17,7 @@ const BookCard = ({ book }: { book: Book}) => {
         e.preventDefault();
 
         if (isItemInCart) {
-            replace('/cart');
+            replace('/checkout/cart');
             return;
         }
 
@@ -26,7 +26,8 @@ const BookCard = ({ book }: { book: Book}) => {
             title: book.title,
             price: book.price,
             quantity: 1,
-            imageUrl: book.imageUrl
+            imageUrl: book.imageUrl,
+            slug: book.slug
         });
     }
 

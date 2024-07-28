@@ -9,6 +9,7 @@ import { IconSearch, IconShoppingCart } from '@tabler/icons-react';
 import classes from './Header.module.scss'
 import Logo from '@/components/Logo';
 import useCartStore from '@/store/cartStore';
+import Link from 'next/link';
 
 const Header = () => {
     const searchParams = useSearchParams();
@@ -66,10 +67,11 @@ const Header = () => {
                 </div>
 
                 {/* Cart Icon*/}
-                <div className={`flex align-middle cursor-pointer relative`}>
+                <Link href={`/checkout/cart`} className={`flex align-middle relative`}>
                     <IconShoppingCart size={24} />
-                    <span className={`text-white bg-black font-bold text-xs w-[16px] h-[16px] rounded-full flex align-middle justify-center absolute top-[-10px] right-[-10px]`}>{cartItemCount}</span>
-                </div>
+                    {!!cartItemCount && <span
+                        className={`text-white bg-black font-bold text-xs w-[16px] h-[16px] rounded-full flex align-middle justify-center absolute top-[-10px] right-[-10px]`}>{cartItemCount}</span>}
+                </Link>
             </Container>
         </header>
     );

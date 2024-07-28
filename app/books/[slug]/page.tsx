@@ -1,9 +1,10 @@
-import { Breadcrumbs, Anchor, Image, Divider } from '@mantine/core';
+import { Breadcrumbs, Image, Divider } from '@mantine/core';
 import { notFound } from 'next/navigation';
 
 import { books } from '@/lib/placeholder-data';
 import { convertCentsToRupees } from '@/utils/currency';
 import AddToCartWithQty from '@/components/AddToCartWithQty';
+import Link from 'next/link';
 
 const Page = ({ params }: { params: { slug: string }}) => {
     const slug = params.slug;
@@ -17,9 +18,9 @@ const Page = ({ params }: { params: { slug: string }}) => {
         { title: 'Home', href: '/' },
         { title: book.title, href: '#', disabled: true },
     ].map((item, index) => (
-        <Anchor href={item.href} key={index}>
+        <Link className={`text-gray-500`} href={item.href} key={index}>
             {item.title}
-        </Anchor>
+        </Link>
     ));
 
     return (
@@ -31,10 +32,10 @@ const Page = ({ params }: { params: { slug: string }}) => {
                 </div>
                 <div className={`px-4`}>
                     <h1 className={`text-2xl font-semibold`}>{book.title}</h1>
-                    <Anchor style={{
+                    <Link style={{
                         color: '#6b7280',
                         textDecoration: 'none'
-                    }} href={`/?query=${book.author}`}>{book.author}</Anchor>
+                    }} href={`/?query=${book.author}`}>{book.author}</Link>
                     <p className={`text-lg font-semibold mt-2`}>{convertCentsToRupees(book.price)}</p>
                     <div className={`text-lg mt-5`} dangerouslySetInnerHTML={{ __html: book.summary.replace(/\n/g, '<br />') }}></div>
                     <AddToCartWithQty stock={book.quantityInStock} book={book} />

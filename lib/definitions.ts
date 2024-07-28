@@ -35,6 +35,7 @@ export interface CartItem {
     price: number;
     imageUrl: string;
     quantity: number;
+    slug: string;
 }
 
 export interface CartState {
@@ -43,4 +44,20 @@ export interface CartState {
     removeItem: (isbn: string) => void;
     updateQuantity: (isbn: string, quantity: number) => void;
     clearCart: () => void;
+}
+
+export interface CheckoutDetails {
+    firstName: string;
+    lastName: string;
+    phone: string;
+    email: string;
+    address: string;
+    city: string;
+    postalCode: string;
+    paymentMethod: string;
+}
+
+export interface CheckoutStore {
+    details: CheckoutDetails;
+    setDetails: (details: CheckoutDetails) => void;
 }
