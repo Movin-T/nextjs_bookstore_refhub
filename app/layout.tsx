@@ -33,13 +33,13 @@ export default function RootLayout({
             <div className={`h-screen`}>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Header/>
-                    <div className={`main overflow-auto`}>
-                        <Container size={"xl"} className={`min-h-[100%]`}>
-                            {children}
-                        </Container>
-                        <Footer/>
-                    </div>
                 </Suspense>
+                <div className={`main overflow-auto`}>
+                    <Container size={"xl"} className={`min-h-[100%]`}>
+                        {children}
+                    </Container>
+                    <Footer/>
+                </div>
             </div>
         </MantineProvider>
         </body>
