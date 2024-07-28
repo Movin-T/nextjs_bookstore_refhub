@@ -148,5 +148,52 @@ export const books: Book[] = [
         quantityInStock: 2,
         category: Category.SelfHelp,
         slug: 'think-like-a-monk'
+    },
+    {
+        isbn: '978-1612681139',
+        title: 'Rich Dad Poor Dad',
+        author: 'Robert Kiyosaki',
+        publisher: 'Plata Publishing',
+        publicationYear: 2022,
+        summary: 'Rich Dad Poor Dad is the only book you need to know about personal finance. If you have not read a single book about finance or investing, Rich Dad Poor Dad is the best book to start with. It explains everything you need to know about money, personal finance and investing.\n' +
+            '\n' +
+            'Rich Dad Poor Dad is the #1 Personal Finance book that has ever been written. This book should be taught in every school. Rich Dad Poor Dad is a must read for any entrepreneur who plans to start their own business. This book encourages us to focus on passive income, rather than working income. It is a practical book with lot of theoretical information broken down so any amateur could understand easily.',
+        imageUrl: 'https://m.media-amazon.com/images/I/81BE7eeKzAL._SL1500_.jpg',
+        price: 299000, // Store price in cents
+        quantityInStock: 3,
+        category: Category.BusinessAndMoney,
+        slug: 'rich-dad-poor-dad'
+    },
+    {
+        isbn: '978-9387944893',
+        title: 'The 5 AM Club: Own Your Morning, Elevate Your Life',
+        author: 'Robin Sharma',
+        publisher: 'Jaico Publishing House',
+        publicationYear: 2018,
+        summary: 'Part manifesto for mastery, part playbook for genius-grade productivity and part companion for a life lived beautifully, the 5 am club is a work that will transform your life. Forever.\n' +
+            '\n' +
+            'Legendary leadership and elite performance expert Robin Sharma introduced The 5 AM Club concept over twenty years ago, based on a revolutionary morning routine that has helped his clients maximize their productivity, activate their best health and bulletproof their serenity in this age of overwhelming complexity.\n' +
+            '\n' +
+            'Now, in this life-changing book, handcrafted by the author over a rigorous four year period, you will discover the early-rising habit that has helped so many accomplish epic results while upgrading their happiness, helpfulness and feelings of aliveness.',
+        imageUrl: 'https://m.media-amazon.com/images/I/71loUTDulKL._SL1500_.jpg',
+        price: 199000, // Store price in cents
+        quantityInStock: 2,
+        category: Category.SelfHelp,
+        slug: 'the-5-am-club'
+    },
+    {
+        isbn: '978-0062457714',
+        title: 'The Subtle Art of Not Giving a F*ck',
+        author: 'Mark Manson',
+        publisher: 'HarperOne',
+        publicationYear: 2018,
+        summary: 'In this generation-defining self-help guide, a superstar blogger cuts through the crap to show us how to stop trying to be “positive” all the time so that we can truly become better, happier people.\n' +
+            '\n' +
+            'For decades, we’ve been told that positive thinking is the key to a happy, rich life. “F**k positivity,” Mark Manson says. “Let’s be honest, shit is f**ked and we have to live with it.” In his wildly popular Internet blog, Manson doesn’t sugarcoat or equivocate. He tells it like it is—a dose of raw, refreshing, honest truth that is sorely lacking today. The Subtle Art of Not Giving a F**k is his antidote to the coddling, let’s-all-feel-good mindset that has infected modern society and spoiled a generation, rewarding them with gold medals just for showing up.',
+        imageUrl: 'https://m.media-amazon.com/images/I/71kzkcMcAQL._SL1500_.jpg',
+        price: 279000, // Store price in cents
+        quantityInStock: 4,
+        category: Category.SelfHelp,
+        slug: 'the-subtle-art-of-not-giving-a-fk'
     }
 ];

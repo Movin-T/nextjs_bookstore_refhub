@@ -1,5 +1,9 @@
 import CheckoutStepper from '@/components/CheckoutStepper';
 
+export const metadata = {
+    title: 'Checkout',
+};
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
 
     return (
