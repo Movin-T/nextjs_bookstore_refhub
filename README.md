@@ -25,5 +25,5 @@ Book Haven is a fictional book store created for the interview assignment of Ref
 - run `npm run dev` to start the development server.
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Who do I talk to if I have questions / suggestions?
+## Contact
 - You can reach out to me at [movin1999t@gmail.com](mailto:movin1999t@gmail.com) or [LinkedIn](https://www.linkedin.com/in/movin-tilakaratne).

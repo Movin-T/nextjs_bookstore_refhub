@@ -5,6 +5,7 @@ import '@mantine/core/styles.css';
 import { ColorSchemeScript, Combobox, Container, MantineProvider } from '@mantine/core';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
+import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,13 +31,15 @@ export default function RootLayout({
         <MantineProvider>
             <div className="gradient"/>
             <div className={`h-screen`}>
-                <Header/>
-                <div className={`main overflow-auto`}>
-                    <Container size={"xl"} className={`min-h-[100%]`}>
-                        {children}
-                    </Container>
-                    <Footer/>
-                </div>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Header/>
+                    <div className={`main overflow-auto`}>
+                        <Container size={"xl"} className={`min-h-[100%]`}>
+                            {children}
+                        </Container>
+                        <Footer/>
+                    </div>
+                </Suspense>
             </div>
         </MantineProvider>
         </body>
