@@ -1,8 +1,8 @@
 'use client';
+import { useRouter } from 'next/navigation';
 
 import useCartStore from '@/store/cartStore';
 import useCheckoutStore from '@/store/checkoutStore';
-import { useRouter } from 'next/navigation';
 import { convertCentsToRupees } from '@/utils/currency';
 import { SHIPPING_COST } from '@/constants/shipping';
 
@@ -14,11 +14,18 @@ const Page = () => {
 
     const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
+    // Redirect to cart if no items
+    if (items.length === 0) {
+        replace('/checkout/cart');
+    }
+
     const handleConfirmOrder = () => {
         // Handle order confirmation logic here
-        clearCart();
-
         replace('/success');
+
+        setTimeout(() => {
+            clearCart();
+        }, 1000);
     };
 
     return (

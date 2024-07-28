@@ -1,11 +1,11 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import useCartStore from '@/store/cartStore';
 import CheckoutForm from '@/components/CheckoutForm';
 import CartTotal from '@/components/CartTotal';
-import { useEffect } from 'react';
 
 const Page = () => {
     const { replace } = useRouter();
@@ -19,7 +19,7 @@ const Page = () => {
     }, [items, replace]);
 
     return (
-        <div  className={`grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5`}>
+        <div  className={`flex flex-col-reverse md:flex-col md:grid md:grid-cols-[2fr_1fr] gap-5`}>
             <CheckoutForm />
             <CartTotal />
         </div>
