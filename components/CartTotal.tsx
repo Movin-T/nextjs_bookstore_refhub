@@ -4,8 +4,8 @@ import useCartStore from '@/store/cartStore';
 import { convertCentsToRupees } from '@/utils/currency';
 
 const CartTotal = ({ buttonText, buttonAction }: {
-    buttonText: string,
-    buttonAction: () => void
+    buttonText?: string,
+    buttonAction?: () => void
 }) => {
     const items = useCartStore((state) => state.items);
     const itemTotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -25,7 +25,7 @@ const CartTotal = ({ buttonText, buttonAction }: {
                 <span>Total:</span>
                 <span>{convertCentsToRupees(itemTotal + shipping)}</span>
             </div>
-            <Button fullWidth className="w-full bg-blue-500 text-white" onClick={buttonAction}>{buttonText}</Button>
+            {!!buttonText && (<Button fullWidth className="w-full bg-blue-500 text-white" onClick={buttonAction}>{buttonText}</Button>)}
         </div>
     );
 }

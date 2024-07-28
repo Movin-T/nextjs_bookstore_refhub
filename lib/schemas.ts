@@ -1,5 +1,6 @@
 // lib/schemas.ts
 import { z } from 'zod';
+import { PaymentMethod } from '@/lib/definitions';
 
 export const checkoutSchema = z.object({
     firstName: z.string().min(1, 'First name is required'),
@@ -9,6 +10,7 @@ export const checkoutSchema = z.object({
     address: z.string().min(1, 'Address is required'),
     city: z.string().min(1, 'City is required'),
     postalCode: z.string().min(1, 'Postal code is required'),
-    country: z.string().min(1, 'Country is required'),
-    paymentMethod: z.string().min(1, 'Payment method is required'),
+    paymentMethod: z.nativeEnum(PaymentMethod,{
+        invalid_type_error: 'Invalid payment method',
+    }),
 });

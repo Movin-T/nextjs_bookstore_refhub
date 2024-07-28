@@ -3,23 +3,25 @@
 import { useRouter } from 'next/navigation';
 
 import useCartStore from '@/store/cartStore';
+import CheckoutForm from '@/components/CheckoutForm';
+import CartTotal from '@/components/CartTotal';
+import { useEffect } from 'react';
 
 const Page = () => {
     const { replace } = useRouter();
-    const itemCount = useCartStore((state) => state.items.length);
+    const items = useCartStore((state) => state.items);
 
-    // Redirect to home if no items in cart
-    if (!itemCount) {
-        replace('/');
-    }
-
-    const proceedHandler = () => {
-        replace('/checkout/confirm');
-    }
+    // Redirect to cart if no items
+    useEffect(() => {
+        if (items.length === 0) {
+            replace('/checkout/cart');
+        }
+    }, [items, replace]);
 
     return (
         <div  className={`grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5`}>
-            <div></div>
+            <CheckoutForm />
+            <CartTotal />
         </div>
     )
 }

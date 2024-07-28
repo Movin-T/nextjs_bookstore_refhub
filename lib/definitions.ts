@@ -1,5 +1,10 @@
 // Contains interface definitions for the data.
 
+import { checkoutSchema } from '@/lib/schemas';
+import { z } from 'zod';
+
+export type CheckoutDetails = z.infer<typeof checkoutSchema>;
+
 export enum SortBy {
     TitleAsc = "Title (A-Z)",
     TitleDesc = "Title (Z-A)",
@@ -13,6 +18,11 @@ export enum Category {
     BusinessAndMoney = "Business & Money",
     PositivityAndLifeHacks = "Positivity & Life Hacks",
     SelfHelp = "Self Help"
+}
+
+export enum PaymentMethod {
+    CashOnDelivery = "Cash on Delivery",
+    BankTransfer = "Bank Transfer",
 }
 
 export interface Book {
@@ -44,17 +54,6 @@ export interface CartState {
     removeItem: (isbn: string) => void;
     updateQuantity: (isbn: string, quantity: number) => void;
     clearCart: () => void;
-}
-
-export interface CheckoutDetails {
-    firstName: string;
-    lastName: string;
-    phone: string;
-    email: string;
-    address: string;
-    city: string;
-    postalCode: string;
-    paymentMethod: string;
 }
 
 export interface CheckoutStore {
